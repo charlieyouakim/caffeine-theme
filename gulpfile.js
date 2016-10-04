@@ -1,9 +1,10 @@
 "use strict";
-var PORT, _s, addsrc, banner, browserSync, changed, concat, cssmin, dist, gulp, gutil, header, pkg, prefix, reload, sass, src, strip, uglify;
+var PORT, _s, addsrc, banner, sourcemaps, browserSync, changed, concat, cssmin, dist, gulp, gutil, header, pkg, prefix, reload, sass, src, strip, uglify;
 
 gulp = require("gulp");
 gutil = require("gulp-util");
 sass = require("gulp-sass");
+sourcemaps = require('gulp-sourcemaps');
 concat = require("gulp-concat");
 header = require("gulp-header");
 uglify = require("gulp-uglify");
@@ -76,7 +77,14 @@ gulp.task("fonts", function() {
 });
 
 gulp.task("css", ["fonts"], function() {
-    gulp.src(src.css.vendor).pipe(changed(dist.css)).pipe(addsrc(src.sass.main)).pipe(sass().on("error", gutil.log)).pipe(concat("" + dist.name + ".css")).pipe(prefix()).pipe(strip({
+    gulp.src(src.css.vendor).
+    pipe(changed(dist.css)).
+    pipe(addsrc(src.sass.main)).
+    pipe(sourcemaps.init()).  
+    pipe(sass().on("error", gutil.log)).
+    pipe(sourcemaps.write()).
+    pipe(concat("" + dist.name + ".css")).
+    pipe(prefix()).pipe(strip({
         all: true
     })).pipe(cssmin()).pipe(header(banner, {
         pkg: pkg

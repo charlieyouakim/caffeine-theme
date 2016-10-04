@@ -3,13 +3,10 @@
   "description": "Minimalist and Elegant theme for Ghost",
   "homepage": "https://github.com/kelyvin/caffeine-theme",
   "version": "2.7.6",
-  "author": {
-    "name": "Kelyvin",
-    "url": "https://github.com/kelyvin"
-  },
+  "author": "Kelyvin (https://github.com/kelyvin)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kelyvin/caffeine-theme"
+    "url": "git+https://github.com/kelyvin/caffeine-theme.git"
   },
   "scripts": {
     "start": "npm install && gulp",
@@ -28,9 +25,10 @@
     "zen"
   ],
   "devDependencies": {
+    "bourbon": "^4.2.7",
     "browser-sync": "*",
     "coffee-script": "*",
-    "gulp": "*",
+    "gulp": "^3.9.1",
     "gulp-add-src": "*",
     "gulp-autoprefixer": "*",
     "gulp-changed": "*",
@@ -39,6 +37,7 @@
     "gulp-header": "*",
     "gulp-minify-css": "*",
     "gulp-sass": "*",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-strip-css-comments": "*",
     "gulp-uglify": "*",
     "gulp-util": "*",
@@ -47,5 +46,9 @@
   "engines": {
     "node": "~0.10.0 || ~0.12.0 || ^4.2.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }
