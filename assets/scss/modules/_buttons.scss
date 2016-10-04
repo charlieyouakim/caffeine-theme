@@ -4,19 +4,19 @@ img,
         border-radius: 0;
     }
     &.rounded {
-        border-radius: 20%;
+        border-radius: 50%;
     }
 }
 
 .btn {
-    padding: 10px 10px;
+    padding: 10px 20px;
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     font-weight: bold;
     letter-spacing: 1px;
     color: $primary-color;
     border: 1px solid $primary-color;
-    border-radius: 10px;
+    border-radius: 20px;
     text-shadow: none;
 
     &:hover {

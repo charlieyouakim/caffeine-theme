@@ -88,13 +88,13 @@
             li {
                 display: inline-block;
                 margin: 0 5px;
-                border-radius: 10px;
+                border-radius: 20px;
                 background: $primary-color;
                 color: $slate-white;
                 @include btn-cover-with-border;
 
                 a {
-                    padding: 10px 10px;
+                    padding: 10px 20px;
                     font-size: 14px;
                     @include btn-cover;
 
