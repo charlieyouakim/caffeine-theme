@@ -82,7 +82,7 @@ gulp.task("css", ["fonts"], function() {
     pipe(addsrc(src.sass.main)).
     pipe(sourcemaps.init()).  
     pipe(sass().on("error", gutil.log)).
-    pipe(sourcemaps.write()).
+    pipe(sourcemaps.write({includeContent: false})).
     pipe(concat("" + dist.name + ".css")).
     pipe(prefix()).pipe(strip({
         all: true
